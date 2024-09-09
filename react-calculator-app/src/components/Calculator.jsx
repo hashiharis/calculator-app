@@ -14,7 +14,13 @@ export const Calculator = () => {
 
   const handleExpression=()=>{
      
-   setResult(eval(calculation).toString())
+   try{
+    setResult(eval(calculation).toString())
+   } 
+   catch{
+     setResult("Invalid Entry!!!")
+   }
+   
 
   }
 
