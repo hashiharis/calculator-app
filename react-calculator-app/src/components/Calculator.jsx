@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './calculator.css'
 import { TiBackspaceOutline } from "react-icons/ti";
+import { Navbar } from './Navbar';
 
 export const Calculator = () => {
   const [calculation,setCalculation]=useState("");
@@ -33,6 +34,8 @@ export const Calculator = () => {
     setCalculation(prevCalc=>prevCalc.slice(0,-1))
   }
   return (
+    <>
+    <Navbar/>
     <div className="calculator-container">
       <div className='screen-area'>
       <div className="display">{calculation}</div>
@@ -65,5 +68,6 @@ export const Calculator = () => {
       </div>
       </div>
     </div>
+    </>
   );
 };
