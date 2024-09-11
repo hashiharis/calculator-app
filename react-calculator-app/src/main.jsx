@@ -13,8 +13,8 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}/>
-       <Route path="/login" element={<Login/>}/>  
-      <Route path="/calculator" element={<Calculator/>}/>
+       {/* <Route path="/login" element={<Login/>}/>  
+      <Route path="/calculator" element={<Calculator/>}/> */}
     </Routes>
     </BrowserRouter>
     </AuthContextProvider>

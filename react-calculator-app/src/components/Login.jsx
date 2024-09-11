@@ -5,17 +5,17 @@ import { useNavigate } from "react-router-dom"
 export const Login=()=>{
     const [email,setEmail]=useState("")
     const [password,setPassword]=useState("")
-    const {auth,isLogin,isLogout}=useContext(AuthContext)
-    const submitRef=useRef(null)
-    const navigate=useNavigate();
-    useEffect(()=>{
-        if(auth){
-            navigate("/calculator")
-        }
-        else{
-            navigate("/login")
-        }
-    },[auth,submitRef,navigate])
+    // const {auth,isLogin,isLogout}=useContext(AuthContext)
+    // const submitRef=useRef(null)
+    // const navigate=useNavigate();
+    // useEffect(()=>{
+    //     if(auth){
+    //         navigate("/calculator")
+    //     }
+    //     else{
+    //         navigate("/login")
+    //     }
+    // },[auth,submitRef,navigate])
 
 
     const handleSubmit=()=>{
