@@ -62,13 +62,43 @@
     left: 320px;
 }
 
+.history-btn{
+    position:absolute;
+    left:1000px;
+    top:3px;
+    margin-top:1em;
+    background-color:#F1AF60; 
+    border:none;
+    border-radius:5px;
+    color:white;
+    padding:0.5em;
+}
+
+.history-list{
+    position:absolute;
+    left:900px;
+    top:50px;
+   
+}
+.history-element{
+    background-color: #FFE3AA;
+    border:none;
+    border-radius:5px;
+    padding:0.5em;
+}
 
 @media (max-width:320px){
     .calculator-container{
         min-width:100%;
     }
     .icon{
-        left: 250px;
+        left: 260px!important;
+    }
+    .history-btn{
+        left:250px;
+    }
+    .history-list{
+        left:300px;
     }
 }
 
@@ -79,6 +109,12 @@
     }
     .icon{
         left: 360px;
+    }
+    .history-btn{
+        left:150px;
+    }
+    .history-list{
+        left:300px;
     }
 }
 

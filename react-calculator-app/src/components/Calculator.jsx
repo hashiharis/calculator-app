@@ -25,7 +25,10 @@ export const Calculator = () => {
       let copyArr=[...history]
       copyArr.push(obj)
       setHistory(copyArr)
-
+      if(history.length>5){
+        copyArr.shift()
+        setHistory(copyArr)
+      }
     } catch {
       setResult("Invalid Entry!!!");
     }
@@ -45,8 +48,7 @@ console.log(history)
   const historyList=history.map((item,index)=>{
     return(
      <ul key={index} >
-        <button ref={historyRef} onClick={()=>{
-            setHistoryView("displayScreen")
+        <button ref={historyRef} className="history-element" onClick={()=>{
             setCalculation(item.expression)
             setResult(item.result)
         }}>{item.expression}={item.result}</button>
@@ -54,20 +56,24 @@ console.log(history)
     )
  })
 const handleHistory=()=>{
-    setHistoryView("display")
+    if(historyView==="none"){
+      setHistoryView("display")
+    }
+    else{
+      setHistoryView("none")
+    }
+  
+
+  
 }
 
   return (
     <>
       <Navbar/>
-      <button onClick={handleHistory}>History</button>
+      <button onClick={handleHistory} className="history-btn">History</button>
       <div className="calculator-container">
         <div className="screen-area">
           <div className="display">{calculation}</div>
-          {/* {historyView==="displayScreen"?} 
-          historyView==="displayScreen"? text:
-          historyView==="displayScreen"? res:*/
-          }
           <div className="result">{result}</div>
         </div>
         <div className="calculator-section">
@@ -139,7 +145,7 @@ const handleHistory=()=>{
           </div>
         </div>
       </div>
-      <div style={{textAlign:"right", paddingRight:"10em"}}>
+      <div className="history-list">
             {historyView==="display"&&historyList}
         </div>
     </>
